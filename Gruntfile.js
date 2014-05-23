@@ -8,6 +8,7 @@ module.exports = function(grunt) {
     clean: ['./dist'],
   });
 
+  // Instead of grunt.loadNpmTasks('...')
   require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('default', ['copy', 'clean']);
