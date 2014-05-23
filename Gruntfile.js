@@ -29,12 +29,5 @@ module.exports = function(grunt) {
   // https://github.com/sindresorhus/load-grunt-tasks
   require('load-grunt-tasks')(grunt);
 
-  grunt.registerMultiTask('version', 'Add build number to the package.json', function() {
-    var package = JSON.parse(grunt.file.read('./package.json'));
-    package.version = this.options().buildNumber;
-
-    grunt.file.write('./dist/package.json', JSON.stringify(package, null, 2));
-  });
-
   grunt.registerTask('default', ['clean', 'copy', 'version:release']);
 };
